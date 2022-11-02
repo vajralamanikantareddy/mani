@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        var car = null;
+        var timer = null;
+        
+        function init(){
+            car = document.getElementById('car')
+            car.style.position="relative";
+            car.style.left = '20px';
+        }
+
+        function move(){
+            car.style.left = parseInt(car.style.left)+ 30 +'px'
+            timer = setTimeout(move,200)
+            x = parseInt(car.style.left)
+            if(x>= 1200){
+                document.getElementById("red").innerHTML="Danger";
+                clearTimeout(timer)
+            }
+        }
+        
+        function stop(){
+            clearTimeout(timer)
+        }
+        
+        function reset(){
+            clearTimeout(timer)
+            car.style.left ='20px'
+             document.getElementById("red").innerHTML="";
+
+        }
+    </script>
+
+
+
+</head>
+    <body onload="init()">
+         <div style="float:left">
+            <img id="car"src="car.png" width="400" height="200">  
+            <div > 
+                <button onclick="move()">Start</button>
+                <button onclick="stop()">Stop</button>
+                <button onclick="reset()">reset</button>
+            </div>       
+        </div>
+        <div style="background-color: blue; float: right;width:30px;height:600px"></div>
+        <div id="red" style="background-color: red;color: white;float:right;font-size:40px;margin-top:300px"></div>
+
+        
+    </body>
+</body>
+</html>

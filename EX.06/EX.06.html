@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="style.js"></script>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body style="background-color: grey;">
+    <div id="box">
+        WELCOME TEXT
+    </div>
+    <br><br>
+    Background color : <input type="color" id="background" onchange="change()">
+    <br><br>
+    Text color : <input type="color" id="textcolor" onchange="change()">
+    <br><br>
+    Text size : <select id="size" onchange="change()">
+        <option value="18">18</option>
+        <option value="20">20</option>
+        <option value="24">24</option>
+        <option value="28">28</option>
+      </select>
+    <br><br>
+    Box Width : 
+    <input type="text" id="width" onkeyup="change()">
+    <br><br>
+    Box Height : <input type="text" id="height" onkeyup="change()">
+</body>
+
+<div >
+     Border radius:
+    <input type="range" min="1" max="100" value="50" id="range" onmouseup="change()">
+  </div>
+</html>
