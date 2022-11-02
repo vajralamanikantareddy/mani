@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            .b1{
+                border:3px solid black;
+                width:500px;
+                height:500px;
+            }
+            .b2{
+                color: blue;
+                text-align: center;
+
+            }
+            
+        </style>
+        <script>
+             function convert(){
+                 var num = document.getElementById('num').value;
+                 var from = document.getElementById('from').value;
+                 var to = document.getElementById('to').value;
+                 var result='';
+                 switch(from){
+                    case "INR":
+                       switch(to){
+                           case "INR": result = "Amount = Rs. " + num; break;
+                           case "USD": result = "Amount = $ " + parseInt(num)/79.91; break;
+                           case "RUB": result = "Amount = rub " + parseInt(num)/1.31; break;
+                       }
+                       break;
+                    case "USD":
+                       switch(to){
+                           case "INR":result = "Amount = Rs. " + parseInt(num)*79.91; break;
+                           case "USD":result = "Amount = $ " + num; break;
+                           case "RUB":result = "Amount = rub "+ parseInt(num)*61.12;break;
+                       }
+                       break;
+                    case "RUB":
+                       switch(to){
+                           case "INR": result="Amount = Rs. "+ parseInt(num)*1.31; break;
+                           case "USD": result="Amount = $ "+ parseInt(num)/61.12;break;
+                           case "RUB": result="Amount = rub "+ num; break;
+                    }
+                    break;
+
+
+              }
+              document.getElementById('box').innerHTML = result;
+
+
+             }
+
+        </script>
+    </head>
+
+    <body>
+        <div class="b1">
+            <div class="b2"><h1>Currency Converter</h1>
+            Amount:<br><ex.5input type="text" id="num" onkeyup="convert()"><br><br>
+            From: <br><ex.5select id="from" onchange="convert()">
+                <option>INR</option>
+                <option>USD</option>
+                <option>RUB</option>
+            </select><br><br>
+            To: <br><ex.5select id="to" onchange="convert()">
+                <option>INR</option>
+                <option>USD</option>
+                <option>RUB</option>
+            </select><br><br>
+            <div id="box" style="color:blue;"></div>
+        </div>
+       
+    </body>
+</html>
