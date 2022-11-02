@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script>
+      $(document).ready(function(){
+        $('#btn').click(function(){
+            var a1=parseInt($('#t1').val());
+            var a2=parseInt($('#t2').val());
+            var a3=parseInt($('#t3').val());
+            var a4=parseInt($('#t4').val());
+            var a5=parseInt($('#t5').val());
+            var a6=parseInt($('#t6').val());
+            var a7=parseInt($('#t7').val());
+            var average=(a3+a4+a5+a6+a7)/5;
+            $('#t8').html(average);
+            if(average>=95){
+                $('#t9').text("S");
+            }
+            else if(average>=85 && average<=95){
+                $('#t9').text("A");
+            }
+            else if(average>=75 && average<=85){
+                $('#t9').text("B");
+            }
+            else if(average>=65 && average<=75){
+                $('#t9').text("C");
+
+            }
+            else if(average>=50|65){
+                $('#t9').text("P");
+
+            }
+            else if(average<=50){
+                $('#t9').text("F");
+            }
+            else{
+                $('#t9').text("No");
+            }
+
+        }) 
+      })  
+
+     </script>
+</head>
+<body>
+    <h1 style="color:white;text-align:center;background-color:blue"> My College</h1>
+    <h2 style="color:red;text-align:center">Grade Evaluation</h2>
+    <div style="text-align:center;color:blue">
+    Student Name:<br>
+    <input type="text" id="t1" style="color:rgb(15, 14, 14)"><br><br>
+    Student Reg.No:<br>
+    <input type="text" id="t2" style="color:rgb(7, 6, 6)"><br><br>
+    Course 1 Marks:<br>
+    <input type="text" id="t3" style="color:rgb(3, 3, 3)"><br><br>
+    Course 2 Marks:<br>
+    <input type="text" id="t4" style="color:rgb(0, 0, 0)"><br><br>
+    Course 3 Marks:<br>
+    <input type="text" id="t5" style="color:rgb(0, 0, 0)"><br><br>
+    Course 4 Marks:<br>
+    <input type="text" id="t6" style="color:rgb(0, 0, 0)"><br><br>
+    Course 5 Marks:<br>
+    <input type="text" id="t7" style="color:rgb(0, 0, 0)"><br><br>
+    </div>
+    <div style="text-align:center">
+    <button style="background-color:blue;color:white;" onclick="FindGrade()" id="btn">Find Grade</button></div>
+</div>
+<div style="background-color:aqua;margin-left: 500px;width:600px;height:10px"></div><br>
+<div style="text-align:center; color:green;font-size:20px">Grade Details</div><br>
+<div>
+  <div style="text-align:center;background-color:green;color:white;margin-left:550px;margin-top:0px;font-size:30px; width: 200px;">Average Marks</div>
+  <div id="t8" style="color:red;margin-left: 850px;margin-top: 0px;font-size: 30px;"></div><br>
+</div>
+<div style="margin-top: 0px;">
+   <div style="text-align:center;background-color:green;color:white;margin-left:550px;font-size:30px; width: 200px;">Grade</div>
+   <div id="t9" style="color:red;margin-left: 850px;font-size: 30px;"></div><br>
+
+</div>
+
+ 
+
+</body>
+</html>
