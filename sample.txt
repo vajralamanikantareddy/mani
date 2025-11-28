@@ -1,6 +1,10 @@
 fjgf
+<<<<<<< HEAD
 hellow every one
 
+=======
+dfkf
+>>>>>>> a6ea6d224e19f4e22bea9b8a5f61a8f3de6ad6c1
 
 
 lfgfdgdf
